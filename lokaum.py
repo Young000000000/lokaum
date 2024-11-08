@@ -9,7 +9,7 @@ def load_data(filename="lokaum.csv"):
     data = pd.read_csv(filename)
     data['구매확정일'] = pd.to_datetime(data['구매확정일']).dt.date  # Show only date for purchase_confirmed_at
     data['주문일'] = pd.to_datetime(data['주문일']).dt.date         # Show only date for created_at
-    return data
+    return data 
 
 # Display the summaries with columns for layout
 def display_summaries(data):
