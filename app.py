@@ -6,8 +6,8 @@ st.set_page_config(layout="wide")
 
 # Load data from CSV file
 def load_data(filename="lokaum.csv"):
-    data = data[data.status_id==900]
     data = pd.read_csv(filename)
+    data = data[data.status_id==900]
     data['구매확정일'] = pd.to_datetime(data['구매확정일']).dt.date  # Show only date for purchase_confirmed_at
     data['주문일'] = pd.to_datetime(data['주문일']).dt.date         # Show only date for created_at
     return data 
